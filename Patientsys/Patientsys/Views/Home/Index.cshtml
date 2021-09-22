@@ -1,0 +1,196 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+    <div style="background-color: #9fcefc; padding-top: 10px; padding-bottom: 10px; padding-left: 1000px; height: 60px;">
+        <button class="btn btn-info col-md-2" style="margin-right: 5px; background-color: #4CAF50; border-radius: 8px;" data-bind="event: {click: $root.New},enable: enableDisableNew" type="button" id="btnNew"><i class="fas fa-plus fa-md"> New</i></button>
+        <button class="btn btn-info col-md-2" style="margin-right: 5px; background-color: #008CBA; border-radius: 8px;" data-bind="event: {click: $root.Save},enable: enableDisableSave" type="button" id="btnSave"><i class="fas fa-save fa-md"> Save</i></button>
+        <button class="btn btn-info col-md-2" style="margin-right: 5px; background-color: #f44336; border-radius: 8px;" data-bind="event: {click: $root.Clear},enable: enableDisableClear" type="button" id="btnClear"><i class="fas fa-backspace fa-md"> Clear</i></button>
+        <button class="btn btn-info col-md-2" style="background-color: #4CAF50; border-radius: 8px;" data-bind="event: {click: $root.AllUpdate},enable: enableDisableAllUpd" type="button" id="btnAllUpd"><i class="fas fa-redo-alt fa-md">  Update</i></button>
+    </div>
+
+    <div id="tabs1" style="padding-bottom: 50px; background-color: #cfd8e8;">
+        <ul>
+            <li><a href="#tabs-1">Patient Entry Form</a></li>
+            <li><a href="#tabs-2">Patient Data Grid</a></li>
+            <li><a href="#tabs-5">Patient Remote Data Grid</a></li>
+        </ul>
+
+        <div id="tabs-1">
+            <div class="form-row" style="padding-bottom:40px; padding-top:30px;" data-bind="with: MyPatient">
+                <div class="form-group col-md-2">
+                    <label for="FullName">Full Name</label>
+                    <input type="text" data-bind="value: FullName, enable:$root.enableDisable"
+                           class="form-control" id="inputFullName" placeholder="Full Name">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="Email">Email</label>
+                    <input type="text" data-bind="value: Email,enable:$root.enableDisable" class="form-control"
+                           id="inputEmail" placeholder="Email">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="Phone">Phone Number</label>
+                    <input type="text" data-bind="value: PhoneNumber,enable:$root.enableDisable"
+                           class="form-control" id="inputPhone" placeholder="Phone">
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="Age">Age</label>
+                    <input type="text" data-bind="value: Age,enable:$root.enableDisable" class="form-control"
+                           id="inputAge" placeholder="Your Age">
+                </div>
+                <div class="form-group col-md-2" style="padding-top: 15px; padding-left:20px;">
+                    <label for="Gender">Gender: </label>
+                    <div class="form-check form-check-inline" style="padding-top: 10px; padding-left:10px;">
+                        <input class="form-check-input1" type="radio" value="Male"
+                               data-bind="checked: SelectedGender,enable:$root.enableDisableGender"
+                               name="inlineRadioOptions" id="inlineRadio1">
+                        <label class="form-check-label" for="inlineRadio1">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline" style="padding-top: 10px; padding-left:10px;">
+                        <input class="form-check-input1" type="radio" value="Female"
+                               data-bind="checked: SelectedGender,enable:$root.enableDisableGender"
+                               name="inlineRadioOptions" id="inlineRadio2">
+                        <label class="form-check-label" for="inlineRadio2">Female</label>
+                    </div>
+                </div>
+                <div class="form-group col-md-2">
+                    <label for="Address">Address</label>
+                    <input type="text" data-bind="value: Address, enable:$root.enableDisable"
+                           class="form-control" id="inputAddress" placeholder="Address">
+                </div>
+            </div>
+
+            <div id="tabs2" style=" padding-bottom: 50px; background-color: #cfd8e8;">
+                <ul>
+                    <li><a href="#tabs-3">Appointment Record</a></li>
+                    <li><a href="#tabs-4">Treatment Record</a></li>
+                </ul>
+
+                <div id="tabs-3" data-bind="with: Appointment" style="background-color: #9fcefc;">
+                    <h1 style="text-align: center; font-family: sans-serif; font-weight: bolder;">Appointment Details</h1>
+                    <div id="AppGrid">
+                    </div>
+                    <div class="form-row" style="padding-top: 30px; padding-left: 40px;">
+
+                        <div class="form-group col-md-2" style="padding-left: 40px;">
+                            <input type="text" class="form-control" data-bind="value: AppCause, enable:$root.enableDisable"
+                                   id="appCause" placeholder="Cause of Appointment">
+                        </div>
+                        <div class="form-group col-md-2" style="padding-left: 40px;">
+                            <input type="text" class="form-control" data-bind="value: AppTreatment, enable:$root.enableDisable"
+                                   id="appTreatment" placeholder="Treatment Name">
+                        </div>
+                        <div class="form-group col-md-2" style="padding-left: 40px;">
+                            <input type="date" class="form-control" data-bind="value: AppDate, enable:$root.enableDisable"
+                                   id="appDate" placeholder="Appointment Date">
+                        </div>
+                        <div class="form-group col-md-2" style="padding-left: 40px;">
+                            <input type="time" class="form-control" data-bind="value: AppTime, enable:$root.enableDisable"
+                                   id="appTime" placeholder="Appointment Time">
+                        </div>
+                        <div class="form-group col-md-2" style="padding-left: 40px;">
+                            <input type="text" class="form-control" data-bind="value: AppRoomNum, enable:$root.enableDisable"
+                                   id="appRoomNum" placeholder="Appointment Room">
+                        </div>
+
+                        <div class="form-group col-md-2" style="padding-left: 60px;">
+                            <button class="btn btn-info col-md-5" style="margin-right: 5px; background-color: #4CAF50; border-radius: 8px;" data-bind="event: {click: $root.AppUpdate},enable: $root.EDAppUpd" type="button" id="btnupdate"><i class="fas fa-redo-alt fa-md">  Update</i></button>
+                            <button class="btn btn-success col-md-5" style="background-color: #008CBA; border-radius: 8px;" data-bind="event: {click: $root.AppAdd},enable: $root.EDAppAdd" type="button" id="btnAdd"><i class="fas fa-plus fa-md">Add</i></button>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div id="tabs-4" style="background-color: #9fcefc;">
+                    <h1 style="text-align: center; font-family: sans-serif; font-weight: bolder;">Treatment Details</h1>
+                    <div id="TreatmentGrid">
+                    </div>
+
+                    <div class="form-row" style="padding-bottom:40px; padding-top:30px;" data-bind="with: Treatment">
+                        <div class="form-group col-md-3" style="padding-left: 40px;">
+                            <input type="text" data-bind="value: TreatmentName, enable:$root.enableDisable"
+                                   class="form-control" id="treatmentName" placeholder="Treatment Name">
+                        </div>
+                        <div class="form-group col-md-2" style="padding-left: 40px;">
+                            <input type="date" class="form-control" data-bind="value: TreatmentDate, enable:$root.enableDisable"
+                                   id="treatmentDate" placeholder="Treatment Date">
+                        </div>
+                        <div class="form-group col-md-2" style="padding-left: 40px;">
+                            <input type="time" class="form-control" data-bind="value: TreatmentTime, enable:$root.enableDisable"
+                                   id="treatmentTime" placeholder="Treatment Time">
+                        </div>
+                        <div class="form-group col-md-2" style="padding-left: 40px;">
+                            <input type="text" data-bind="value: DoctorName,enable:$root.enableDisable" class="form-control"
+                                   id="doctorName" placeholder="DoctorName">
+                        </div>
+                        <div class="form-group col-md-3" style="padding-top: 10px; padding-left: 40px;">
+                            <button class="btn btn-info col-md-5" style="margin-right: 5px; background-color: #4CAF50; border-radius: 8px;" data-bind="event: {click: $root.TreatUpdate},enable: $root.EDTreatUpdate" type="button" id="btnupdate"><i class="fas fa-redo-alt fa-md">  Update</i></button>
+                            <button class="btn btn-success col-md-5" style="background-color: #008CBA; border-radius: 8px;" data-bind="event: {click: $root.TreatAdd},enable: $root.EDTreatAdd" type="button" id="btnAdd"><i class="fas fa-plus fa-md">Add</i></button>
+                        </div>
+                    </div>
+
+                    <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+                    <div data-bind="with: Medicine" style="background-color: #9fcefc; padding-top: 20px">
+                        <h1 style="text-align: center; font-family: sans-serif; font-weight: bolder;">Medicine Details</h1>
+                        <div id="MedGrid">
+                        </div>
+                        <div class="form-row" style="padding-top: 30px; padding-left: 40px;">
+                            <div class="form-group col-md-2" style="padding-left: 40px;">
+                                <input type="text" data-bind="value: MedName, enable:$root.enableDisable"
+                                       class="form-control" id="inputMedName" placeholder="Medicine Name">
+                            </div>
+                            <div class="form-group col-md-3" style="padding-left: 40px;">
+                                <input type="text" data-bind="value: MedCompany,enable:$root.enableDisable" class="form-control"
+                                       id="medCompany" placeholder="Medicine Company">
+                            </div>
+                            <div class="form-group col-md-2" style="padding-left: 40px;">
+                                <input type="text" data-bind="value: MedPrice,enable:$root.enableDisable" class="form-control"
+                                       id="medPrice" placeholder="Medicine Price">
+                            </div>
+                            <div class="form-group col-md-2" style="padding-left: 40px;">
+                                <input type="date" data-bind="value: MedExpDate,enable:$root.enableDisable" class="form-control"
+                                       id="medExpDate" placeholder="Medicine Expire Date">
+                            </div>
+                            <div class="form-group col-md-3" style="padding-left: 40px;">
+                                <button class="btn btn-info col-md-5" style="margin-right: 5px; background-color: #4CAF50; border-radius: 8px;" data-bind="event: {click: $root.MedUpd},enable: $root.EDMedUpd" type="button" id="btnEduUpdate"><i class="fas fa-redo-alt fa-md">  Update</i></button>
+                                <button class="btn btn-success col-md-5" style="background-color: #008CBA; border-radius: 8px;" data-bind="event: {click: $root.MedAdd},enable: $root.EDMedAdd" type="button" id="btnEduAdd"><i class="fas fa-plus fa-md">Add</i></button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="tabs-2">
+            <h1 style="text-align: center; font-family: sans-serif; font-weight: bolder;">Patient Data Grid</h1>
+            <div class="input-group mb-3" >
+                <input type="text" class="form-control" data-bind=" value: $root.Search" placeholder="Search By Name" aria-label="Search" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="searchBtn" data-bind="event: {click: $root.btnSearch}"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div id="PatientGrid">
+            </div>
+        </div>
+
+        <div id="tabs-5">
+            <h1 style="text-align: center; font-family: sans-serif; font-weight: bolder;">Patient Remote Data Grid</h1>
+            <div id="PatientRemoteGrid">
+            </div>
+        </div>
+    </div>
+
+
+        
+
+    </div>
+
+    <div id="dialogbox" title="Error">
+        <div id="errorMessage"></div>
+    </div>
+

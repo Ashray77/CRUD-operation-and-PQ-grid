@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3C27D7AA-C6C1-4827-AB8C-A59391778069}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Patientsys</RootNamespace>
+    <AssemblyName>Patientsys</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44382</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DB\DBCon.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AppointmentInfo.cs" />
+    <Compile Include="Models\MedicineInfo.cs" />
+    <Compile Include="Models\PatientInfo.cs" />
+    <Compile Include="Models\PQModel.cs" />
+    <Compile Include="Models\TreatmentInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\bootstrap\js\jquery-3.4.1.min.js" />
+    <Content Include="Content\bootstrap\js\jquery-migrate-1.4.1.min.js" />
+    <Content Include="Content\bootstrap\js\jquery-ui.min.js" />
+    <Content Include="Content\bootstrap\js\knockout-3.3.0.js" />
+    <Content Include="Content\hhhh.PNG" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Content\bootstrap\js\bootstrap.min.js.map" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\js\bootstrap.bundle.js" />
+    <Content Include="Scripts\js\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\js\bootstrap.js" />
+    <Content Include="Scripts\js\bootstrap.min.js" />
+    <Content Include="Scripts\js\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\js\jquery-migrate-1.4.1.min.js" />
+    <Content Include="Scripts\js\jquery-ui.min.js" />
+    <Content Include="Scripts\js\knockout-3.3.0.js" />
+    <Content Include="Scripts\libs\jquery-ui-1.12.1.custom\AUTHORS.txt" />
+    <Content Include="Scripts\libs\jquery-ui-1.12.1.custom\external\jquery\jquery.js" />
+    <Content Include="Scripts\libs\jquery-ui-1.12.1.custom\images\ui-icons_444444_256x240.png" />
+    <Content Include="Scripts\libs\jquery-ui-1.12.1.custom\images\ui-icons_777620_256x240.png" />
+    <Content Include="Scripts\libs\jquery-ui-1.12.1.custom\images\ui-icons_777777_256x240.png" />
+    <Content Include="Scripts\libs\jquery-ui-1.12.1.custom\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Scripts\libs\jquery-ui-1.12.1.custom\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Scripts\libs\jquery-ui-1.12.1.custom\index.html" />
+    <Content Include="Scripts\libs\jquery-ui-1.12.1.custom\jquery-ui.css" />
+    <Content Include="Scripts\libs\jquery-ui-1.12.1.custom\jquery-ui.js" />
+    <Content Include="Scripts\libs\jquery-ui-1.12.1.custom\jquery-ui.min.css" />
+    <Content Include="Scripts\libs\jquery-ui-1.12.1.custom\jquery-ui.min.js" />
+    <Content Include="Scripts\libs\jquery-ui-1.12.1.custom\jquery-ui.structure.css" />
+    <Content Include="Scripts\libs\jquery-ui-1.12.1.custom\jquery-ui.structure.min.css" />
+    <Content Include="Scripts\libs\jquery-ui-1.12.1.custom\jquery-ui.theme.css" />
+    <Content Include="Scripts\libs\jquery-ui-1.12.1.custom\jquery-ui.theme.min.css" />
+    <Content Include="Scripts\libs\jquery-ui-1.12.1.custom\LICENSE.txt" />
+    <Content Include="Scripts\libs\jquery\jquery-3.4.1.js" />
+    <Content Include="Scripts\libs\jquery\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\libs\jquery\jquery-migrate-1.4.1.js" />
+    <Content Include="Scripts\libs\jquery\jquery-migrate-1.4.1.min.js" />
+    <Content Include="Scripts\libs\pqGrid\angular\ng.pqgrid.dev.js" />
+    <Content Include="Scripts\libs\pqGrid\angular\ng.pqgrid.min.js" />
+    <Content Include="Scripts\libs\pqGrid\array.htm" />
+    <Content Include="Scripts\libs\pqGrid\ChangeLog.txt" />
+    <Content Include="Scripts\libs\pqGrid\images\eye.png" />
+    <Content Include="Scripts\libs\pqGrid\images\filter.png" />
+    <Content Include="Scripts\libs\pqGrid\images\loading.gif" />
+    <Content Include="Scripts\libs\pqGrid\images\menu.png" />
+    <Content Include="Scripts\libs\pqGrid\images\pivot.png" />
+    <Content Include="Scripts\libs\pqGrid\images\row-group.png" />
+    <Content Include="Scripts\libs\pqGrid\images\square-blue-tr.gif" />
+    <Content Include="Scripts\libs\pqGrid\images\square-red-rb.gif" />
+    <Content Include="Scripts\libs\pqGrid\images\square-red-tr.gif" />
+    <Content Include="Scripts\libs\pqGrid\images\square_dirty.gif" />
+    <Content Include="Scripts\libs\pqGrid\images\sum.png" />
+    <Content Include="Scripts\libs\pqGrid\index.js" />
+    <Content Include="Scripts\libs\pqGrid\javascript-detect-element-resize\jquery.resize.js" />
+    <Content Include="Scripts\libs\pqGrid\json.htm" />
+    <Content Include="Scripts\libs\pqGrid\jsZip-2.5.0\jszip.min.js" />
+    <Content Include="Scripts\libs\pqGrid\jsZip-2.5.0\MIT-License.txt" />
+    <Content Include="Scripts\libs\pqGrid\jszip-utils-0.0.2\jszip-utils.min.js" />
+    <Content Include="Scripts\libs\pqGrid\jszip-utils-0.0.2\MIT-License.txt" />
+    <Content Include="Scripts\libs\pqGrid\knockout\ko.pqgrid.dev.js" />
+    <Content Include="Scripts\libs\pqGrid\knockout\ko.pqgrid.min.js" />
+    <Content Include="Scripts\libs\pqGrid\localize\pq-localize-de.js" />
+    <Content Include="Scripts\libs\pqGrid\localize\pq-localize-en.js" />
+    <Content Include="Scripts\libs\pqGrid\localize\pq-localize-es.js" />
+    <Content Include="Scripts\libs\pqGrid\localize\pq-localize-fr.js" />
+    <Content Include="Scripts\libs\pqGrid\localize\pq-localize-hu.js" />
+    <Content Include="Scripts\libs\pqGrid\localize\pq-localize-it.js" />
+    <Content Include="Scripts\libs\pqGrid\localize\pq-localize-ja.js" />
+    <Content Include="Scripts\libs\pqGrid\localize\pq-localize-nl.js" />
+    <Content Include="Scripts\libs\pqGrid\localize\pq-localize-pl.js" />
+    <Content Include="Scripts\libs\pqGrid\localize\pq-localize-pt-br.js" />
+    <Content Include="Scripts\libs\pqGrid\localize\pq-localize-pt.js" />
+    <Content Include="Scripts\libs\pqGrid\localize\pq-localize-pt_br.js" />
+    <Content Include="Scripts\libs\pqGrid\localize\pq-localize-ru.js" />
+    <Content Include="Scripts\libs\pqGrid\localize\pq-localize-tr.js" />
+    <Content Include="Scripts\libs\pqGrid\localize\pq-localize-zh.js" />
+    <Content Include="Scripts\libs\pqGrid\localize\pq-localize-zh_TW.js" />
+    <Content Include="Scripts\libs\pqGrid\pqgrid.dev.css" />
+    <Content Include="Scripts\libs\pqGrid\pqgrid.dev.js" />
+    <Content Include="Scripts\libs\pqGrid\pqgrid.empower.css" />
+    <Content Include="Scripts\libs\pqGrid\pqgrid.min.css" />
+    <Content Include="Scripts\libs\pqGrid\pqgrid.min.js" />
+    <Content Include="Scripts\libs\pqGrid\pqgrid.rtl.dev.css" />
+    <Content Include="Scripts\libs\pqGrid\pqgrid.rtl.min.css" />
+    <Content Include="Scripts\libs\pqGrid\pqgrid.ui.dev.css" />
+    <Content Include="Scripts\libs\pqGrid\pqgrid.ui.min.css" />
+    <Content Include="Scripts\libs\pqGrid\pqgrid.ui.rtl.dev.css" />
+    <Content Include="Scripts\libs\pqGrid\pqgrid.ui.rtl.min.css" />
+    <Content Include="Scripts\libs\pqGrid\pqSelect\ChangeLog.txt" />
+    <Content Include="Scripts\libs\pqGrid\pqSelect\index.js" />
+    <Content Include="Scripts\libs\pqGrid\pqSelect\pqselect.bootstrap.dev.css" />
+    <Content Include="Scripts\libs\pqGrid\pqSelect\pqselect.bootstrap.min.css" />
+    <Content Include="Scripts\libs\pqGrid\pqSelect\pqselect.dev.css" />
+    <Content Include="Scripts\libs\pqGrid\pqSelect\pqselect.dev.js" />
+    <Content Include="Scripts\libs\pqGrid\pqSelect\pqselect.min.css" />
+    <Content Include="Scripts\libs\pqGrid\pqSelect\pqselect.min.js" />
+    <Content Include="Scripts\libs\pqGrid\pqTouch\pqtouch.dev.js" />
+    <Content Include="Scripts\libs\pqGrid\pqTouch\pqtouch.min.js" />
+    <Content Include="Scripts\libs\pqGrid\readme.txt" />
+    <Content Include="Scripts\libs\pqGrid\themes\bootstrap\pqgrid.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\bootstrap\pqgrid.rtl.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\brown\pqgrid.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\brown\pqgrid.rtl.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\chocolate\pqgrid.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\chocolate\pqgrid.rtl.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\cocoa\pqgrid.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\cocoa\pqgrid.rtl.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\crimson\pqgrid.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\crimson\pqgrid.rtl.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\gray\pqgrid.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\gray\pqgrid.rtl.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\indigo\pqgrid.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\indigo\pqgrid.rtl.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\Office\pqgrid.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\Office\pqgrid.rtl.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\purple\pqgrid.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\purple\pqgrid.rtl.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\red\pqgrid.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\red\pqgrid.rtl.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\rosybrown\pqgrid.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\rosybrown\pqgrid.rtl.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\sandybrown\pqgrid.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\sandybrown\pqgrid.rtl.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\steelblue\pqgrid.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\steelblue\pqgrid.rtl.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\tan\pqgrid.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\tan\pqgrid.rtl.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\violet\pqgrid.css" />
+    <Content Include="Scripts\libs\pqGrid\themes\violet\pqgrid.rtl.css" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\MyJavaScript.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\js\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\js\bootstrap.js.map" />
+    <Content Include="Scripts\js\bootstrap.min.js.map" />
+    <Content Include="Scripts\libs\jquery-ui-1.12.1.custom\package.json" />
+    <Content Include="Scripts\libs\pqGrid\EULA.pdf" />
+    <Content Include="Scripts\libs\pqGrid\javascript-detect-element-resize\LICENSE" />
+    <Content Include="Scripts\libs\pqGrid\package.json" />
+    <Content Include="Scripts\libs\pqGrid\pqSelect\package.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\libs\pqGrid\pqgrid.d.ts" />
+    <TypeScriptCompile Include="Scripts\libs\pqGrid\pqSelect\pqselect.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58961</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44382/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
