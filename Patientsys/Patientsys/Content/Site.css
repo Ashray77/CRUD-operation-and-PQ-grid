@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    /*padding-top: 50px;*/
     padding-bottom: 20px;
 }
 
@@ -21,4 +21,16 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+    input[type=text]:focus {
+        border: 3px solid #3399ff;
+    }
+    input[type=date]:focus {
+        border: 3px solid #3399ff;
+    }
+    input[type=time]:focus {
+        border: 3px solid #3399ff;
+    }
+h1 {
+    font-family: "Lucida Handwriting", cursive;
 }

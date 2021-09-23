@@ -568,6 +568,7 @@ function PersonalVM() {
                         //debugger    
                         UiEvents.GridFunctions.PatientDataGrid("PatientGrid");
                         $("#tabs1").tabs({ active: 0 });
+                        $("#tabs2").tabs({ active: 0 });
 
                         self.enableDisableClear(true);
                         self.enableDisableNew(false);
@@ -705,8 +706,10 @@ function PersonalVM() {
     };
 
     self.AppDelete = function (Index) {
-        self.AppointmentList.splice(Index, 1);
-        UiEvents.GridFunctions.AppointmentDataGrid("AppGrid");
+        if (confirm("Do you want to delete?")) {
+            self.AppointmentList.splice(Index, 1);
+            UiEvents.GridFunctions.AppointmentDataGrid("AppGrid");
+        }
     };
 
     self.AppEdit = function (Index) {
@@ -769,8 +772,11 @@ function PersonalVM() {
     };
 
     self.MedDelete = function (Index) {
-        self.MedicineList.splice(Index, 1);
-        UiEvents.GridFunctions.MedicineDataGrid("MedGrid");
+        if (confirm("Do you want to delete?")) {
+            self.MedicineList.splice(Index, 1);
+            UiEvents.GridFunctions.MedicineDataGrid("MedGrid");
+        }
+
     };
 
     self.MedUpd = function () {
@@ -789,8 +795,10 @@ function PersonalVM() {
     };
 
     self.TreatDelete = function (Index) {
-        self.TreatmentList.splice(Index, 1);
-        UiEvents.GridFunctions.TreatmentDataGrid("TreatmentGrid");
+        if (confirm("Do you want to delete?")) {
+            self.TreatmentList.splice(Index, 1);
+            UiEvents.GridFunctions.TreatmentDataGrid("TreatmentGrid");
+        }
     };
 
     self.TreatEdit = function (Index) {
@@ -834,7 +842,9 @@ function PersonalVM() {
     };
 
     self.Pat_delete = function (PatientId) {
-        UiEvents.AjaxFunction.AjaxForDelete(PatientId);
+        if (confirm("Do you want to delete?")) {
+            UiEvents.AjaxFunction.AjaxForDelete(PatientId);
+        }
     };
 
     self.Pat_edit = function (PatientId) {
